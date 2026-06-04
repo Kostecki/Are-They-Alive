@@ -14,6 +14,9 @@ type InputProps = {
 	item: Result;
 } & BoxProps;
 
+const formatItemTitle = (item: Result) =>
+	item.year ? `${item.label} (${item.year})` : item.label;
+
 export default function ItemDetails({ item, ...props }: InputProps) {
 	return (
 		<Box {...props}>
@@ -35,7 +38,7 @@ export default function ItemDetails({ item, ...props }: InputProps) {
 				<Grid.Col span="auto">
 					<Box>
 						<Text fw={700}>
-							{item.label} ({item.year}) {item.countries?.join(" ")}
+							{formatItemTitle(item)} {item.countries?.join(" ")}
 						</Text>
 						{item.subtitle && <Text c="dimmed">{item.subtitle}</Text>}
 						<Flex gap="sm">
