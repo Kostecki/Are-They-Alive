@@ -40,6 +40,9 @@ function SearchInput({ onDebouncedChange, results, loading }: InputProps) {
 		[results],
 	);
 
+	const formatResultLabel = (item: Result) =>
+		item.year ? `${item.label} (${item.year})` : item.label;
+
 	const handleSelect = (optionValue: string) => {
 		const selected = results.find((r) => String(r.id) === optionValue);
 		if (!selected) return;
@@ -97,7 +100,7 @@ function SearchInput({ onDebouncedChange, results, loading }: InputProps) {
 								<Combobox.Option key={item.id} value={String(item.id)}>
 									<Stack gap={2}>
 										<Text fw="bold" size="sm">
-											{item.label} ({item.year})
+											{formatResultLabel(item)}
 										</Text>
 										{item.subtitle && (
 											<Text size="xs" c="dimmed">
@@ -116,7 +119,7 @@ function SearchInput({ onDebouncedChange, results, loading }: InputProps) {
 								<Combobox.Option key={item.id} value={String(item.id)}>
 									<Stack gap={2}>
 										<Text fw="bold" size="sm">
-											{item.label} ({item.year})
+											{formatResultLabel(item)}
 										</Text>
 										{item.subtitle && (
 											<Text size="xs" c="dimmed">
