@@ -130,13 +130,32 @@ export const Route = createFileRoute("/api/credits")({
 					const total = actingCast.length;
 					const paginatedCast = actingCast.slice(offset, offset + limit);
 
+					if (total === 0) {
+						const response = {
+							id,
+							type,
+							cast: [],
+							total: 0,
+						};
+
+						await redis.set(
+							creditsCacheKey,
+							JSON.stringify(response),
+							"EX",
+							86400,
+						);
+
+						return Response.json(response);
+					}
+
 					// Fetch detailed info with caching - use mget for batch Redis operations
 					const cacheKeys = paginatedCast.map(
 						(member) => `person:${member.id}`,
 					);
 
 					// Batch fetch all cache keys at once
-					const cachedValues = await redis.mget(...cacheKeys);
+					const cachedValues =
+						cacheKeys.length > 0 ? await redis.mget(...cacheKeys) : [];
 
 					const detailedCast: NormalizedCast[] = [];
 					const toFetch: (Cast | AggregateCast)[] = [];

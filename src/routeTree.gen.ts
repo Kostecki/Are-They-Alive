@@ -8,214 +8,212 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from "./routes/__root";
-import { Route as MediaTypeIdentifierRouteImport } from "./routes/$mediaType.$identifier";
-import { Route as ApiCreditsRouteImport } from "./routes/api/credits";
-import { Route as ApiFeaturedRouteImport } from "./routes/api/featured";
-import { Route as ApiMovieIdRouteImport } from "./routes/api/movie.$id";
-import { Route as ApiSearchRouteImport } from "./routes/api/search";
-import { Route as ApiTrendingRouteImport } from "./routes/api/trending";
-import { Route as ApiTvIdRouteImport } from "./routes/api/tv.$id";
-import { Route as IndexRouteImport } from "./routes/index";
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiTrendingRouteImport } from './routes/api/trending'
+import { Route as ApiSearchRouteImport } from './routes/api/search'
+import { Route as ApiFeaturedRouteImport } from './routes/api/featured'
+import { Route as ApiCreditsRouteImport } from './routes/api/credits'
+import { Route as MediaTypeIdentifierRouteImport } from './routes/$mediaType.$identifier'
+import { Route as ApiTvIdRouteImport } from './routes/api/tv.$id'
+import { Route as ApiMovieIdRouteImport } from './routes/api/movie.$id'
 
 const IndexRoute = IndexRouteImport.update({
-	id: "/",
-	path: "/",
-	getParentRoute: () => rootRouteImport,
-} as any);
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiTrendingRoute = ApiTrendingRouteImport.update({
-	id: "/api/trending",
-	path: "/api/trending",
-	getParentRoute: () => rootRouteImport,
-} as any);
+  id: '/api/trending',
+  path: '/api/trending',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiSearchRoute = ApiSearchRouteImport.update({
-	id: "/api/search",
-	path: "/api/search",
-	getParentRoute: () => rootRouteImport,
-} as any);
+  id: '/api/search',
+  path: '/api/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiFeaturedRoute = ApiFeaturedRouteImport.update({
-	id: "/api/featured",
-	path: "/api/featured",
-	getParentRoute: () => rootRouteImport,
-} as any);
+  id: '/api/featured',
+  path: '/api/featured',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiCreditsRoute = ApiCreditsRouteImport.update({
-	id: "/api/credits",
-	path: "/api/credits",
-	getParentRoute: () => rootRouteImport,
-} as any);
+  id: '/api/credits',
+  path: '/api/credits',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MediaTypeIdentifierRoute = MediaTypeIdentifierRouteImport.update({
-	id: "/$mediaType/$identifier",
-	path: "/$mediaType/$identifier",
-	getParentRoute: () => rootRouteImport,
-} as any);
+  id: '/$mediaType/$identifier',
+  path: '/$mediaType/$identifier',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiTvIdRoute = ApiTvIdRouteImport.update({
-	id: "/api/tv/$id",
-	path: "/api/tv/$id",
-	getParentRoute: () => rootRouteImport,
-} as any);
+  id: '/api/tv/$id',
+  path: '/api/tv/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiMovieIdRoute = ApiMovieIdRouteImport.update({
-	id: "/api/movie/$id",
-	path: "/api/movie/$id",
-	getParentRoute: () => rootRouteImport,
-} as any);
+  id: '/api/movie/$id',
+  path: '/api/movie/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
-	"/": typeof IndexRoute;
-	"/$mediaType/$identifier": typeof MediaTypeIdentifierRoute;
-	"/api/credits": typeof ApiCreditsRoute;
-	"/api/featured": typeof ApiFeaturedRoute;
-	"/api/search": typeof ApiSearchRoute;
-	"/api/trending": typeof ApiTrendingRoute;
-	"/api/movie/$id": typeof ApiMovieIdRoute;
-	"/api/tv/$id": typeof ApiTvIdRoute;
+  '/': typeof IndexRoute
+  '/$mediaType/$identifier': typeof MediaTypeIdentifierRoute
+  '/api/credits': typeof ApiCreditsRoute
+  '/api/featured': typeof ApiFeaturedRoute
+  '/api/search': typeof ApiSearchRoute
+  '/api/trending': typeof ApiTrendingRoute
+  '/api/movie/$id': typeof ApiMovieIdRoute
+  '/api/tv/$id': typeof ApiTvIdRoute
 }
 export interface FileRoutesByTo {
-	"/": typeof IndexRoute;
-	"/$mediaType/$identifier": typeof MediaTypeIdentifierRoute;
-	"/api/credits": typeof ApiCreditsRoute;
-	"/api/featured": typeof ApiFeaturedRoute;
-	"/api/search": typeof ApiSearchRoute;
-	"/api/trending": typeof ApiTrendingRoute;
-	"/api/movie/$id": typeof ApiMovieIdRoute;
-	"/api/tv/$id": typeof ApiTvIdRoute;
+  '/': typeof IndexRoute
+  '/$mediaType/$identifier': typeof MediaTypeIdentifierRoute
+  '/api/credits': typeof ApiCreditsRoute
+  '/api/featured': typeof ApiFeaturedRoute
+  '/api/search': typeof ApiSearchRoute
+  '/api/trending': typeof ApiTrendingRoute
+  '/api/movie/$id': typeof ApiMovieIdRoute
+  '/api/tv/$id': typeof ApiTvIdRoute
 }
 export interface FileRoutesById {
-	__root__: typeof rootRouteImport;
-	"/": typeof IndexRoute;
-	"/$mediaType/$identifier": typeof MediaTypeIdentifierRoute;
-	"/api/credits": typeof ApiCreditsRoute;
-	"/api/featured": typeof ApiFeaturedRoute;
-	"/api/search": typeof ApiSearchRoute;
-	"/api/trending": typeof ApiTrendingRoute;
-	"/api/movie/$id": typeof ApiMovieIdRoute;
-	"/api/tv/$id": typeof ApiTvIdRoute;
+  __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
+  '/$mediaType/$identifier': typeof MediaTypeIdentifierRoute
+  '/api/credits': typeof ApiCreditsRoute
+  '/api/featured': typeof ApiFeaturedRoute
+  '/api/search': typeof ApiSearchRoute
+  '/api/trending': typeof ApiTrendingRoute
+  '/api/movie/$id': typeof ApiMovieIdRoute
+  '/api/tv/$id': typeof ApiTvIdRoute
 }
 export interface FileRouteTypes {
-	fileRoutesByFullPath: FileRoutesByFullPath;
-	fullPaths:
-		| "/"
-		| "/$mediaType/$identifier"
-		| "/api/credits"
-		| "/api/featured"
-		| "/api/search"
-		| "/api/trending"
-		| "/api/movie/$id"
-		| "/api/tv/$id";
-	fileRoutesByTo: FileRoutesByTo;
-	to:
-		| "/"
-		| "/$mediaType/$identifier"
-		| "/api/credits"
-		| "/api/featured"
-		| "/api/search"
-		| "/api/trending"
-		| "/api/movie/$id"
-		| "/api/tv/$id";
-	id:
-		| "__root__"
-		| "/"
-		| "/$mediaType/$identifier"
-		| "/api/credits"
-		| "/api/featured"
-		| "/api/search"
-		| "/api/trending"
-		| "/api/movie/$id"
-		| "/api/tv/$id";
-	fileRoutesById: FileRoutesById;
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths:
+    | '/'
+    | '/$mediaType/$identifier'
+    | '/api/credits'
+    | '/api/featured'
+    | '/api/search'
+    | '/api/trending'
+    | '/api/movie/$id'
+    | '/api/tv/$id'
+  fileRoutesByTo: FileRoutesByTo
+  to:
+    | '/'
+    | '/$mediaType/$identifier'
+    | '/api/credits'
+    | '/api/featured'
+    | '/api/search'
+    | '/api/trending'
+    | '/api/movie/$id'
+    | '/api/tv/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/$mediaType/$identifier'
+    | '/api/credits'
+    | '/api/featured'
+    | '/api/search'
+    | '/api/trending'
+    | '/api/movie/$id'
+    | '/api/tv/$id'
+  fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-	IndexRoute: typeof IndexRoute;
-	MediaTypeIdentifierRoute: typeof MediaTypeIdentifierRoute;
-	ApiCreditsRoute: typeof ApiCreditsRoute;
-	ApiFeaturedRoute: typeof ApiFeaturedRoute;
-	ApiSearchRoute: typeof ApiSearchRoute;
-	ApiTrendingRoute: typeof ApiTrendingRoute;
-	ApiMovieIdRoute: typeof ApiMovieIdRoute;
-	ApiTvIdRoute: typeof ApiTvIdRoute;
+  IndexRoute: typeof IndexRoute
+  MediaTypeIdentifierRoute: typeof MediaTypeIdentifierRoute
+  ApiCreditsRoute: typeof ApiCreditsRoute
+  ApiFeaturedRoute: typeof ApiFeaturedRoute
+  ApiSearchRoute: typeof ApiSearchRoute
+  ApiTrendingRoute: typeof ApiTrendingRoute
+  ApiMovieIdRoute: typeof ApiMovieIdRoute
+  ApiTvIdRoute: typeof ApiTvIdRoute
 }
 
-declare module "@tanstack/react-router" {
-	interface FileRoutesByPath {
-		"/": {
-			id: "/";
-			path: "/";
-			fullPath: "/";
-			preLoaderRoute: typeof IndexRouteImport;
-			parentRoute: typeof rootRouteImport;
-		};
-		"/api/trending": {
-			id: "/api/trending";
-			path: "/api/trending";
-			fullPath: "/api/trending";
-			preLoaderRoute: typeof ApiTrendingRouteImport;
-			parentRoute: typeof rootRouteImport;
-		};
-		"/api/search": {
-			id: "/api/search";
-			path: "/api/search";
-			fullPath: "/api/search";
-			preLoaderRoute: typeof ApiSearchRouteImport;
-			parentRoute: typeof rootRouteImport;
-		};
-		"/api/featured": {
-			id: "/api/featured";
-			path: "/api/featured";
-			fullPath: "/api/featured";
-			preLoaderRoute: typeof ApiFeaturedRouteImport;
-			parentRoute: typeof rootRouteImport;
-		};
-		"/api/credits": {
-			id: "/api/credits";
-			path: "/api/credits";
-			fullPath: "/api/credits";
-			preLoaderRoute: typeof ApiCreditsRouteImport;
-			parentRoute: typeof rootRouteImport;
-		};
-		"/$mediaType/$identifier": {
-			id: "/$mediaType/$identifier";
-			path: "/$mediaType/$identifier";
-			fullPath: "/$mediaType/$identifier";
-			preLoaderRoute: typeof MediaTypeIdentifierRouteImport;
-			parentRoute: typeof rootRouteImport;
-		};
-		"/api/tv/$id": {
-			id: "/api/tv/$id";
-			path: "/api/tv/$id";
-			fullPath: "/api/tv/$id";
-			preLoaderRoute: typeof ApiTvIdRouteImport;
-			parentRoute: typeof rootRouteImport;
-		};
-		"/api/movie/$id": {
-			id: "/api/movie/$id";
-			path: "/api/movie/$id";
-			fullPath: "/api/movie/$id";
-			preLoaderRoute: typeof ApiMovieIdRouteImport;
-			parentRoute: typeof rootRouteImport;
-		};
-	}
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/trending': {
+      id: '/api/trending'
+      path: '/api/trending'
+      fullPath: '/api/trending'
+      preLoaderRoute: typeof ApiTrendingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/search': {
+      id: '/api/search'
+      path: '/api/search'
+      fullPath: '/api/search'
+      preLoaderRoute: typeof ApiSearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/featured': {
+      id: '/api/featured'
+      path: '/api/featured'
+      fullPath: '/api/featured'
+      preLoaderRoute: typeof ApiFeaturedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/credits': {
+      id: '/api/credits'
+      path: '/api/credits'
+      fullPath: '/api/credits'
+      preLoaderRoute: typeof ApiCreditsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$mediaType/$identifier': {
+      id: '/$mediaType/$identifier'
+      path: '/$mediaType/$identifier'
+      fullPath: '/$mediaType/$identifier'
+      preLoaderRoute: typeof MediaTypeIdentifierRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tv/$id': {
+      id: '/api/tv/$id'
+      path: '/api/tv/$id'
+      fullPath: '/api/tv/$id'
+      preLoaderRoute: typeof ApiTvIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/movie/$id': {
+      id: '/api/movie/$id'
+      path: '/api/movie/$id'
+      fullPath: '/api/movie/$id'
+      preLoaderRoute: typeof ApiMovieIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+  }
 }
 
 const rootRouteChildren: RootRouteChildren = {
-	IndexRoute: IndexRoute,
-	MediaTypeIdentifierRoute: MediaTypeIdentifierRoute,
-	ApiCreditsRoute: ApiCreditsRoute,
-	ApiFeaturedRoute: ApiFeaturedRoute,
-	ApiSearchRoute: ApiSearchRoute,
-	ApiTrendingRoute: ApiTrendingRoute,
-	ApiMovieIdRoute: ApiMovieIdRoute,
-	ApiTvIdRoute: ApiTvIdRoute,
-};
+  IndexRoute: IndexRoute,
+  MediaTypeIdentifierRoute: MediaTypeIdentifierRoute,
+  ApiCreditsRoute: ApiCreditsRoute,
+  ApiFeaturedRoute: ApiFeaturedRoute,
+  ApiSearchRoute: ApiSearchRoute,
+  ApiTrendingRoute: ApiTrendingRoute,
+  ApiMovieIdRoute: ApiMovieIdRoute,
+  ApiTvIdRoute: ApiTvIdRoute,
+}
 export const routeTree = rootRouteImport
-	._addFileChildren(rootRouteChildren)
-	._addFileTypes<FileRouteTypes>();
+  ._addFileChildren(rootRouteChildren)
+  ._addFileTypes<FileRouteTypes>()
 
-import type { createStart } from "@tanstack/react-start";
-
-import type { getRouter } from "./router.tsx";
-
-declare module "@tanstack/react-start" {
-	interface Register {
-		ssr: true;
-		router: Awaited<ReturnType<typeof getRouter>>;
-	}
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
 }
