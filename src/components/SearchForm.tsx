@@ -50,6 +50,7 @@ export default function SearchForm({ initialItem, ...props }: InputProps) {
 			try {
 				const data = (await ky
 					.post("/api/credits", {
+						timeout: 30_000,
 						json: {
 							id: item.id,
 							type: item.mediaType,
