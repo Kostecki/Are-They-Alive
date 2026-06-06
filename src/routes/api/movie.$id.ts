@@ -10,22 +10,37 @@ export const Route = createFileRoute("/api/movie/$id")({
 
 				try {
 					const { getTMDB } = await import("~/utils/tmdb");
-					const { getRedis } = await import("~/utils/redis");
+					const { getRedisOptional } = await import("~/utils/redis");
 					const tmdb = getTMDB();
-					const redis = getRedis();
+					const redis = getRedisOptional();
 					const id = Number(params.id);
 
-					// Check cache first
 					const cacheKey = `movie:${id}`;
-					const cached = await redis.get(cacheKey);
 
-					if (cached) {
-						return Response.json(JSON.parse(cached));
+					if (redis) {
+						try {
+							const cached = await redis.get(cacheKey);
+
+							if (cached) {
+								return Response.json(JSON.parse(cached));
+							}
+						} catch (error) {
+							console.warn("Redis read failed for movie details cache.", error);
+						}
 					}
 
-					// Fetch from TMDB and cache for 1 week
 					const data = await tmdb.movies.details(id);
-					await redis.set(cacheKey, JSON.stringify(data), "EX", 604800);
+
+					if (redis) {
+						try {
+							await redis.set(cacheKey, JSON.stringify(data), "EX", 604800);
+						} catch (error) {
+							console.warn(
+								"Redis write failed for movie details cache.",
+								error,
+							);
+						}
+					}
 
 					return Response.json(data);
 				} catch (error) {

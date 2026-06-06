@@ -10,33 +10,47 @@ export const Route = createFileRoute("/api/tv/$id")({
 
 				try {
 					const { getTMDB } = await import("~/utils/tmdb");
-					const { getRedis } = await import("~/utils/redis");
+					const { getRedisOptional } = await import("~/utils/redis");
 					const tmdb = getTMDB();
-					const redis = getRedis();
+					const redis = getRedisOptional();
 					const id = Number(params.id);
 
-					// Check cache first
 					const cacheKey = `tv:${id}`;
-					const cached = await redis.get(cacheKey);
 
-					if (cached) {
-						return Response.json(JSON.parse(cached));
+					if (redis) {
+						try {
+							const cached = await redis.get(cacheKey);
+
+							if (cached) {
+								return Response.json(JSON.parse(cached));
+							}
+						} catch (error) {
+							console.warn("Redis read failed for TV details cache.", error);
+						}
 					}
 
-					// Fetch both details and external IDs to get IMDB ID
 					const [details, externalIds] = await Promise.all([
 						tmdb.tvShows.details(id),
 						tmdb.tvShows.externalIds(id),
 					]);
 
-					// Merge the imdb_id into the details
 					const dataWithImdb = {
 						...details,
 						imdb_id: externalIds.imdb_id || null,
 					};
 
-					// Cache for 1 week
-					await redis.set(cacheKey, JSON.stringify(dataWithImdb), "EX", 604800);
+					if (redis) {
+						try {
+							await redis.set(
+								cacheKey,
+								JSON.stringify(dataWithImdb),
+								"EX",
+								604800,
+							);
+						} catch (error) {
+							console.warn("Redis write failed for TV details cache.", error);
+						}
+					}
 
 					return Response.json(dataWithImdb);
 				} catch (error) {

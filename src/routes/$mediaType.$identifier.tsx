@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, notFound } from "@tanstack/react-router";
 import type { MovieDetails } from "tmdb-ts/dist/types/movies";
 import type { TvShowDetails } from "tmdb-ts/dist/types/tv-shows";
 
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/$mediaType/$identifier")({
 		const id = Number(identifier.split("-")[0]);
 
 		if (mediaType !== "movie" && mediaType !== "tv") {
-			throw new Error("Invalid media type");
+			throw notFound();
 		}
 
 		try {
