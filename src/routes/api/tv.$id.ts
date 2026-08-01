@@ -10,14 +10,17 @@ export const Route = createFileRoute("/api/tv/$id")({
 
 				try {
 					const { getTMDB } = await import("~/utils/tmdb");
-					const { getRedisOptional } = await import("~/utils/redis");
+					const { getRedisOptional, isRedisReady } = await import(
+						"~/utils/redis"
+					);
 					const tmdb = getTMDB();
 					const redis = getRedisOptional();
+					const canUseCache = Boolean(redis && isRedisReady(redis));
 					const id = Number(params.id);
 
 					const cacheKey = `tv:${id}`;
 
-					if (redis) {
+					if (canUseCache && redis) {
 						try {
 							const cached = await redis.get(cacheKey);
 
@@ -39,7 +42,7 @@ export const Route = createFileRoute("/api/tv/$id")({
 						imdb_id: externalIds.imdb_id || null,
 					};
 
-					if (redis) {
+					if (canUseCache && redis) {
 						try {
 							await redis.set(
 								cacheKey,

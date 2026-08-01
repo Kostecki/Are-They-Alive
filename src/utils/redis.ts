@@ -53,6 +53,10 @@ export function getRedisOptional(): Redis | null {
 	return redisInstance;
 }
 
+export function isRedisReady(redis: Redis): boolean {
+	return redis.status === "ready";
+}
+
 export function getRedis(): Redis {
 	const redis = getRedisOptional();
 

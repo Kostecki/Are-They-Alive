@@ -2,24 +2,39 @@ services:
   are-they-alive:
     image: ghcr.io/kostecki/are-they-alive:latest
     restart: unless-stopped
-    hostname: ${HOSTNAME}
+    container_name: are-they-alive
+    hostname: ${APP_HOSTNAME}
     ports:
       - ${APP_PORT}:3000
     environment:
       BASE_URL: ${BASE_URL}
       TMDB_API_TOKEN: ${TMDB_API_TOKEN}
-      REDIS_HOST: ${REDIS_HOST}
-      REDIS_PORT: ${REDIS_PORT}
+      REDIS_HOST: ${REDIS_HOST:-redis}
+      REDIS_PORT: ${REDIS_PORT:-6379}
       REDIS_PASSWORD: ${REDIS_PASSWORD}
+    depends_on:
+      redis:
+        condition: service_healthy
+    labels:
+      - "nautical-backup.group=are-they-alive"
   redis:
     image: redis:alpine
     restart: unless-stopped
+    container_name: are-they-alive-redis
     hostname: ${REDIS_HOSTNAME}
     ports:
-      - 6379:6379
+      - ${REDIS_PORT:-6379}:6379
     environment:
       REDIS_PASSWORD: ${REDIS_PASSWORD}
-    command: redis-server --requirepass $REDIS_PASSWORD --appendonly no
+    command: redis-server --requirepass ${REDIS_PASSWORD} --appendonly no
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - REDISCLI_AUTH="${REDIS_PASSWORD}" redis-cli -h 127.0.0.1 -p 6379 ping | grep -q PONG
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
     volumes:
       - are-they-alive-redis:/data
 
