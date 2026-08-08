@@ -25,7 +25,7 @@ importers:
         version: 9.5.1(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@mantine/emotion':
         specifier: ^9.5.0
-        version: 9.5.0(@emotion/cache@11.14.0)(@emotion/react@11.14.0(@types/react@19.2.18)(react@19.2.8))(@emotion/serialize@1.3.3)(@emotion/utils@1.4.2)(@mantine/core@9.5.1(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        version: 9.5.1(@emotion/cache@11.14.0)(@emotion/react@11.14.0(@types/react@19.2.18)(react@19.2.8))(@emotion/serialize@1.3.3)(@emotion/utils@1.4.2)(@mantine/core@9.5.1(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@mantine/form':
         specifier: ^9.5.0
         version: 9.5.0(react@19.2.8)
@@ -271,15 +271,15 @@ packages:
       react: ^19.2.0
       react-dom: ^19.2.0
 
-  '@mantine/emotion@9.5.0':
-    resolution: {integrity: sha512-UAygRSjHHIaMbo8Cg4d3wxGkidO37A2ms8c5HPA1YMLhi2bNBTCvh/rut36HTpsqQTbpyc/8l3HHwbIKkifcdA==}
+  '@mantine/emotion@9.5.1':
+    resolution: {integrity: sha512-TF0VWoStrm3BeUAHE26ZSIG0UptWZjDIFlEVWNK3CVdTKYiANee11jhrBIFQiG1sq8U/1mMFv5o+KEoxS3YxCQ==}
     peerDependencies:
       '@emotion/cache': ^11.11.0
       '@emotion/react': ^11.11.4
       '@emotion/serialize': ^1.1.4
       '@emotion/utils': ^1.2.1
-      '@mantine/core': 9.5.0
-      '@mantine/hooks': 9.5.0
+      '@mantine/core': 9.5.1
+      '@mantine/hooks': 9.5.1
       react: ^19.2.0
       react-dom: ^19.2.0
 
@@ -2015,7 +2015,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@mantine/emotion@9.5.0(@emotion/cache@11.14.0)(@emotion/react@11.14.0(@types/react@19.2.18)(react@19.2.8))(@emotion/serialize@1.3.3)(@emotion/utils@1.4.2)(@mantine/core@9.5.1(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@mantine/emotion@9.5.1(@emotion/cache@11.14.0)(@emotion/react@11.14.0(@types/react@19.2.18)(react@19.2.8))(@emotion/serialize@1.3.3)(@emotion/utils@1.4.2)(@mantine/core@9.5.1(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@emotion/cache': 11.14.0
       '@emotion/react': 11.14.0(@types/react@19.2.18)(react@19.2.8)
