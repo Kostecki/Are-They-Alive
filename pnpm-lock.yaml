@@ -22,16 +22,16 @@ importers:
         version: 1.4.2
       '@mantine/core':
         specifier: ^9.5.0
-        version: 9.5.1(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        version: 9.5.1(@mantine/hooks@9.5.1(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@mantine/emotion':
         specifier: ^9.5.0
-        version: 9.5.1(@emotion/cache@11.14.0)(@emotion/react@11.14.0(@types/react@19.2.18)(react@19.2.8))(@emotion/serialize@1.3.3)(@emotion/utils@1.4.2)(@mantine/core@9.5.1(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        version: 9.5.1(@emotion/cache@11.14.0)(@emotion/react@11.14.0(@types/react@19.2.18)(react@19.2.8))(@emotion/serialize@1.3.3)(@emotion/utils@1.4.2)(@mantine/core@9.5.1(@mantine/hooks@9.5.1(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@mantine/hooks@9.5.1(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@mantine/form':
         specifier: ^9.5.0
         version: 9.5.1(react@19.2.8)
       '@mantine/hooks':
         specifier: ^9.5.0
-        version: 9.5.0(react@19.2.8)
+        version: 9.5.1(react@19.2.8)
       '@tanstack/react-router':
         specifier: ^1.170.18
         version: 1.170.18(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -288,8 +288,8 @@ packages:
     peerDependencies:
       react: ^19.2.0
 
-  '@mantine/hooks@9.5.0':
-    resolution: {integrity: sha512-d67+7dQW0ZJFiWXqZgwcPrZK0KxKMzAX+Sv663g40xhISseiUoK0f8k/Ss2amOA09IhFayeeaqprVRc4Fp5yEw==}
+  '@mantine/hooks@9.5.1':
+    resolution: {integrity: sha512-2sK9OdWvrzKBOuWxLfQA5qcAJzxpzqNlKumaP7Uq0i7LDBQeY/sYgNiBWLwtW+iZw6fFXwPf0nI7q5VVpvqnNQ==}
     peerDependencies:
       react: ^19.2.0
 
@@ -2002,10 +2002,10 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@mantine/core@9.5.1(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@mantine/core@9.5.1(@mantine/hooks@9.5.1(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@floating-ui/react': 0.27.20(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      '@mantine/hooks': 9.5.0(react@19.2.8)
+      '@mantine/hooks': 9.5.1(react@19.2.8)
       clsx: 2.1.1
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
@@ -2015,14 +2015,14 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@mantine/emotion@9.5.1(@emotion/cache@11.14.0)(@emotion/react@11.14.0(@types/react@19.2.18)(react@19.2.8))(@emotion/serialize@1.3.3)(@emotion/utils@1.4.2)(@mantine/core@9.5.1(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@mantine/emotion@9.5.1(@emotion/cache@11.14.0)(@emotion/react@11.14.0(@types/react@19.2.18)(react@19.2.8))(@emotion/serialize@1.3.3)(@emotion/utils@1.4.2)(@mantine/core@9.5.1(@mantine/hooks@9.5.1(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@mantine/hooks@9.5.1(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       '@emotion/cache': 11.14.0
       '@emotion/react': 11.14.0(@types/react@19.2.18)(react@19.2.8)
       '@emotion/serialize': 1.3.3
       '@emotion/utils': 1.4.2
-      '@mantine/core': 9.5.1(@mantine/hooks@9.5.0(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      '@mantine/hooks': 9.5.0(react@19.2.8)
+      '@mantine/core': 9.5.1(@mantine/hooks@9.5.1(react@19.2.8))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@mantine/hooks': 9.5.1(react@19.2.8)
       csstype: 3.2.3
       html-react-parser: 5.2.17(@types/react@19.2.18)(react@19.2.8)
       react: 19.2.8
@@ -2037,7 +2037,7 @@ snapshots:
       klona: 2.0.6
       react: 19.2.8
 
-  '@mantine/hooks@9.5.0(react@19.2.8)':
+  '@mantine/hooks@9.5.1(react@19.2.8)':
     dependencies:
       react: 19.2.8
 
